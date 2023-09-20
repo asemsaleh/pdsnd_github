@@ -75,7 +75,7 @@ def get_filters():
     return city, month, day
 
 
-def load_data(city, month, day):
+def load_dataframe(city, month, day):
     """Load data for the specified filters of city(ies), month(s) and
        day(s) whenever applicable.
 
@@ -320,7 +320,7 @@ def main():
     while True:
         click.clear()
         city, month, day = get_filters()
-        df = load_data(city, month, day)
+        df = load_dataframe(city, month, day)
 
         mark_place = 0
         while True:
