@@ -12,7 +12,7 @@ weekdays = ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday',
             'saturday')
 
 
-def choice(prompt, choices=('y', 'n')):
+def user_user_choiceprompt, choices=('y', 'n')):
     """Return a valid input from the user given an array of possible answers.
     """
 
@@ -51,17 +51,17 @@ def get_filters():
     print("Type end at any time if you would like to exit the program.\n")
 
     while True:
-        city = choice("\nFor what city(ies) do you want do select data, "
+        city = user_choice"\nFor what city(ies) do you want do select data, "
                       "New York City, Chicago or Washington? Use commas "
                       "to list the names.\n>", CITY_DATA.keys())
-        month = choice("\nFrom January to June, for what month(s) do you "
+        month = user_choice"\nFrom January to June, for what month(s) do you "
                        "want do filter data? Use commas to list the names.\n>",
                        months)
-        day = choice("\nFor what weekday(s) do you want do filter bikeshare "
+        day = user_choice"\nFor what weekday(s) do you want do filter bikeshare "
                      "data? Use commas to list the names.\n>", weekdays)
 
         # confirm the user input
-        confirmation = choice("\nPlease confirm that you would like to apply "
+        confirmation = user_choice"\nPlease confirm that you would like to apply "
                               "the following filter(s) to the bikeshare data."
                               "\n\n City(ies): {}\n Month(s): {}\n Weekday(s)"
                               ": {}\n\n [y] Yes\n [n] No\n\n>"
@@ -261,21 +261,21 @@ def raw_data(df, mark_place):
 
     # this variable holds where the user last stopped
     if mark_place > 0:
-        last_place = choice("\nWould you like to continue from where you "
+        last_place = user_choice"\nWould you like to continue from where you "
                             "stopped last time? \n [y] Yes\n [n] No\n\n>")
         if last_place == 'n':
             mark_place = 0
 
     # sort data by column
     if mark_place == 0:
-        sort_df = choice("\nHow would you like to sort the way the data is "
+        sort_df = user_choice"\nHow would you like to sort the way the data is "
                          "displayed in the dataframe? Hit Enter to view "
                          "unsorted.\n \n [st] Start Time\n [et] End Time\n "
                          "[td] Trip Duration\n [ss] Start Station\n "
                          "[es] End Station\n\n>",
                          ('st', 'et', 'td', 'ss', 'es', ''))
 
-        asc_or_desc = choice("\nWould you like it to be sorted ascending or "
+        asc_or_desc = user_choice"\nWould you like it to be sorted ascending or "
                              "descending? \n [a] Ascending\n [d] Descending"
                              "\n\n>",
                              ('a', 'd'))
@@ -306,7 +306,7 @@ def raw_data(df, mark_place):
             print("\n")
             mark_place += 5
 
-            if choice("Do you want to keep printing raw data?"
+            if user_choice"Do you want to keep printing raw data?"
                       "\n\n[y]Yes\n[n]No\n\n>") == 'y':
                 continue
             else:
@@ -324,7 +324,7 @@ def main():
 
         mark_place = 0
         while True:
-            select_data = choice("\nPlease select the information you would "
+            select_data = user_choice"\nPlease select the information you would "
                                  "like to obtain.\n\n [ts] Time Stats\n [ss] "
                                  "Station Stats\n [tds] Trip Duration Stats\n "
                                  "[us] User Stats\n [rd] Display Raw Data\n "
@@ -344,7 +344,7 @@ def main():
             elif select_data == 'r':
                 break
 
-        restart = choice("\nWould you like to restart?\n\n[y]Yes\n[n]No\n\n>")
+        restart = user_choice"\nWould you like to restart?\n\n[y]Yes\n[n]No\n\n>")
         if restart.lower() != 'y':
             break
 
