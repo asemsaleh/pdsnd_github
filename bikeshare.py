@@ -5,9 +5,10 @@ import datetime as dt
 import click
 
 
-
+# Define Analysis Month
 months = ('january', 'february', 'march', 'april', 'may', 'june')
 
+# Define Abalysis Days
 weekdays = ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday',
             'saturday')
 
